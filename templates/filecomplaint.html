@@ -1,23 +1,36 @@
-<html> 
+<html> <head> 
+<link rel="stylesheet" href="../static/filecomplaint.css">
 
+</head>
+<header>
+    Logout &nbsp;&nbsp; Home
+    <br> &nbsp;&nbsp;&nbsp;
+</header>
+<header2> CITIZENS' REPORT
+</header>
+
+<body>
+ 
 <div class="fields">
             <form method="POST" action="/profileposts">
-                Name of complaint: <br>
+                Title: <br>
                 <input style="width:50%" type="text" name="title-first-ln" value="">
                 <br>
-                Description: <br>
+                Short description: <br>
                 <textarea name="description-second-ln"></textarea>
                 <br>
-                Phone Number/Contact Information: <br>
-                <input style="width:50%" type="text" name="phone-number" value="">
+                Location: <br>
+                <input style="width:50%" type="text" name="location" value="">
                 <br><br>
                 Complexity: <br>
-                <input type="radio" name="post-type" value="https://di-uploads-pod1.s3.amazonaws.com/depaulachevy/uploads/2016/07/Pothole-1024x768.jpg" checked> Pothole<br>
+                <input type="radio" name="post-type" value="https://di-uploads-pod1.s3.amazonaws.com/depaulachevy/uploads/2016/07/Pothole-1024x768.jpg"> Pothole<br>
                 <input type="radio" name="post-type" value=""> Tree<br>
                 <input type="radio" name="post-type" value="http://mrsc.org/getmedia/c9ffa2a9-5d18-4a54-a52c-025156b3d5b4/sidewalk-cracked2.jpg.aspx?width=1920&height=2560&ext=.jpg"> Sidewalks
+                <br>
                 <br>
                 <input type="submit" value="Create Post">
                 <br><br>
             </form>
-
+            </div>
+</body>
 </html>
