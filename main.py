@@ -1,19 +1,21 @@
 import webapp2
 import jinja2
 import os
+from models import Complaints, User
 from google.appengine.api import users
 from google.appengine.ext import db
-from models import Complaints, User
+
 
 the_jinja_env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
     
+
 def checkLoggedInAndRegistered(request):
     profile = users.get_current_user()
     if not profile:
-        request.redirect("/login")
+        request.redirect("/")
         return
     emailAddress = profile.nickname()
     registeredProfile = User.query().filter(User.email == emailAddress).get()
@@ -62,7 +64,7 @@ class userReport(webapp2.RequestHandler):
             "profile_posts": profile_posts,
         }
         
-        profile_posts_template = the_jinja_env.get_template('templates/createReport.html')
+        profile_posts_template = the_jinja_env.get_template('templates/filecomplaint.html')
         self.response.write(profile_posts_template.render(the_variable_dict))
         
     def post(self):
@@ -79,6 +81,7 @@ class userReport(webapp2.RequestHandler):
 class Login(webapp2.RequestHandler):
     def get(self):
         login_template = the_jinja_env.get_template('templates/intro.html')
+        
         the_variable_dict = {
             "login_url":  users.create_login_url('/')
         }
