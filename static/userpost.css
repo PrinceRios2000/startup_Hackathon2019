@@ -41,8 +41,8 @@ p1    {color: green;}
     float: left;
 }
 .post-div{
-    border-width:5px 5px 5px 5px;
-    padding-left:5px;
+    border-width:1fr 1fr 1fr 1fr;
+    padding-left:1fr;
     background-color: grey;
     position: relative;
     float: left;
