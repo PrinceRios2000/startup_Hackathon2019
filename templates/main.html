@@ -3,12 +3,40 @@
     <head> 
     <link rel="stylesheet" href="main.css">
     </head>
-
+    <header>
+         Look at our feed and see what other citizens are complaining about !
+    </header>
     <body> 
-    <h1> 
-    Hello!</h1>
+    <h1>Some of the most previous posts!</h1>
     
-    
-    
-    </body>
+      <div>
+       <a href="/profileposts">
+       <input type="submit" value="File a complaint">
+       </div>
+  
+      <div class="Complaints">
+       <br>
+       <br>
+       <b> <a href="{{logout_url}}">Log out</a></b>
+   
+       <h2>Complaints</h2>
+   
+       <div class="steven">
+       {% for post in profile_posts %}
+   
+      <div class="post-div" >
+       <span>
+        <h2 id="Type">Type: {{post["type"]}}</h2>
+        <h2 id="Location">Location: {{post["location"]}}</h2>
+        <h2 id="Date">Date: {{post["date"]}}</h2>
+       </span>
+      </div>
+     <br> <br>
+    {% endfor %}
+  </div>
+  </div>
+  <div class="image">
+  <img src= StartupHackathon.png>
+  </div>
+ </body>
 </html>
