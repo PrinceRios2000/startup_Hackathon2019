@@ -1,26 +1,45 @@
 <!DOCTYPE html>
 <html>
     <head> 
-    <link rel="stylesheet" href="userpost.css">
+    <link rel="stylesheet" href="../static/userpost.css">
+    
     </head>
     <div class = "b">
         logout &nbsp;&nbsp;&nbsp;
-        home
+        home <br>
     </div>
     
+    <div class = "filebutton"> 
+    <form method="POST" action="/myreport">
+                        <input type="hidden" name="postid" value="{{post.key.id()}}"/>
+                        <input type="submit" name="Create" value="File a complaint"/>
+                    </form>
+            </div>
+    
+    <div class = "heading">  <center> 
+    This is the page where all your posts are showed! You can also delete or create a new one here. </center> <br> </div>
     
     
     
     
     
-    <div class = "a">
-  <h1>This is a heading in a div element</h1>
-  <p>This is some text in a div element.</p>
-</div>
-<div class="a">
-    <h1> This is a heading in a div element </h1>
-    <p> This is another fucking paragraph jesus christ how many will I have? </p>
-</div>
+    
+<div class="profdiv">
+    <br>
+                {% for post in complaintPosts %}
+                <div class="post-div">
+                    <h2>Type of problem: {{post["Type1st"]}}</h2>
+                    <h2>Location of the problem: {{post["Location2nd"]}}</h2>
+                    <h2>Date: {{post["Date3rd"]}}</h2>
+                    <form method="POST" action="/deletepost">
+                        <input type="hidden" name="postid" value="{{post.key.id()}}"/>
+                        <input type="submit" name="Delete" value="Delete"/>
+                    </form>
+                </div>
+                <br><br>
+            {% endfor %}
+            </div>
+
     
     
     </body>

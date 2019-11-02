@@ -9,12 +9,43 @@ p1    {color: green;}
     margin-left: 20px;
     background-color: grey;
     font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 .b {
     float: right;
     margin: 20px;
-    
     font-weight: bolder;
+}
+.filebutton {
+    float: right;
+    margin-top: 20px;
+    margin-right: 10px;
+    display: flex;
+}
+.heading {
+    font-size: larger;
+    font-weight: bolder;
+    background-color: lightgrey;
+    justify-content: center;
+    padding-top: 5px;
+}
+
+
+.profdiv{
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+    position: relative;
+    float: left;
+}
+.post-div{
+    border-width:5px 5px 5px 5px;
+    padding-left:5px;
+    background-color: grey;
+    position: relative;
+    float: left;
 }
 
 
