@@ -1,42 +1,44 @@
 <!DOCTYPE html>
 <html>
     <head> 
-    <link rel="stylesheet" href="main.css">
+    <link style = text/css rel="stylesheet" href="../static/main.css">
     </head>
     <header>
-         Look at our feed and see what other citizens are complaining about !
+         Citzens Report
     </header>
     <body> 
-    <h1>Some of the most previous posts!</h1>
+    <h1>Look at our feed and see what other citizens are complaining about !</h1>
     
       <div>
        <a href="/profileposts">
-       <input type="submit" value="File a complaint">
+        <input type = "hidden" name ="postid" value = "{{post.key.id}}"/>
+       <input type="submit" name = "Create" value="File a complaint"/>
+       <b> <a href="{{logout_url}}">Log out</a></b>
        </div>
   
       <div class="Complaints">
        <br>
-       <br>
-       <b> <a href="{{logout_url}}">Log out</a></b>
    
        <h2>Complaints</h2>
    
-       <div class="steven">
-       {% for post in profile_posts %}
+       <div class="eric">
+       {% for post in complaintPosts %}
    
-      <div class="post-div" >
-       <span>
-        <h2 id="Type">Type: {{post["type"]}}</h2>
-        <h2 id="Location">Location: {{post["location"]}}</h2>
-        <h2 id="Date">Date: {{post["date"]}}</h2>
-       </span>
-      </div>
-     <br> <br>
+        <div class="post-div" >
+        <span>
+         <h2 id="Type">Type: {{post["type"]}}</h2>
+         <h2 id="Location">Location: {{post["location"]}}</h2>
+         <h2 id="Date">Date: {{post["date"]}}</h2>
+        </span>
+        </div>
+      <br> <br>
     {% endfor %}
   </div>
   </div>
+  
   <div class="image">
-  <img src= StartupHackathon.png>
+  <img src= ../StartupHackathon.png>
+  
   </div>
  </body>
 </html>

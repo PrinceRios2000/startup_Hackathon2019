@@ -3,13 +3,16 @@ header{
     font-size: 30px;
     font-weight: normal;
     font-family: "Verdana", Verdana, sans-serif;
-    background-color: #20bf55;
-    background-image: linear-gradient(315deg, #20bf55 0%, #01baef 74%);
+    background-image: url("../Salinas.jpg");
     font-style: italic;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    height: 100px;
+    background-size: contain;
+    background-position: center;
+    background-size: cover;
 }
 
 body{
@@ -24,4 +27,35 @@ img{
     bottom: 8px;
     right: 16px;
     font-size: 18px;
+}
+
+.post-div{
+    grid-template-columns: 10px 10px auto;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    
+}
+
+.Complaints h2{
+    text-decoration: none;
+}
+
+#Type{
+    height: 50px;
+    width: 50px;
+    bottom: 8px;
+    right: 16px;
+    font-size: 30px;
+}
+#Location{
+    font-size: 20px;
+}
+
+#Date{
+    font-size: 20px;
+}
+b a{
+    float: right;
 }
