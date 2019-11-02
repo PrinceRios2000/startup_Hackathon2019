@@ -1,0 +1,21 @@
+body {background-color: white;}
+/*h1   {color: #4D00B2;}*/
+p1    {color: green;} 
+
+.a {
+    float: left;
+    margin-top: 50px;
+    margin-right: 20px;
+    margin-left: 20px;
+    background-color: grey;
+    font-weight: bold;
+}
+.b {
+    float: right;
+    margin: 20px;
+    
+    font-weight: bolder;
+}
+
+
+
