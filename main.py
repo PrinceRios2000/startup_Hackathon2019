@@ -42,8 +42,8 @@ class Reports(webapp2.RequestHandler):
         
         post=Complaints(
             Type = self.request.get('Type1st'),
-            Location = self.request.get('Location2nd')
-            Date = datetime.datetime.fromtimestamp(time.mktime(utc_time.timetuple())
+            Location = self.request.get('Location2nd'),
+            Date = self.request.get('Date3rd')
             )
         post_key = post.put()
         self.response.write("Reports created: " + str(post_key) + "<br>")
@@ -70,16 +70,60 @@ class userReport(webapp2.RequestHandler):
         
         post = Complaints(
         Type = self.request.get('Type1st'), 
-        Location=self.request.get('Locatinon2nd'),
-        Date = datetime.datetime.fromtimestamp(time.mktime(utc_time.timetuple()))
+        Location=self.request.get('Location2nd'),
+        Date = self.request.get('Date3rd')
         )
         post_key = post.put()
         self.redirect("/myreport")
-
+        
+class Login(webapp2.RequestHandler):
+    def get(self):
+        login_template = the_jinja_env.get_template('templates/intro.html')
+        the_variable_dict = {
+            "login_url":  users.create_login_url('/')
+        }
+        self.response.write(login_template.render(the_variable_dict))
+        
+class Registration(webapp2.RequestHandler):
+    def get(self):
+        profile = users.get_current_user()
+        
+        registration_template = the_jinja_env.get_template('templates/registration.html')
+        the_variable_dict = {
+            "email_address":  profile.nickname()
+        }
+        
+        self.response.write(registration_template.render(the_variable_dict))
+    
+    def post(self):
+        profile = users.get_current_user()
+        
+        citizen_acc = User(
+            FirstName=self.request.get('first_name'), 
+            LastName =self.request.get('last_name'),
+            PhoneNumber =self.request.get('last_name'),
+            Location = self.request.get('last_name'),
+            Email=profile.nickname()
+        )
+        
+        citizen_acc.put()
+        
+        self.redirect('/')
+class DeletepostHandler(webapp2.RequestHandler):
+    def get(self):
+        client = users.get_current_user()
+        profile_post = Complaints.query().fetch()
+        
+    def post(self):
+        postid= self.request.get("postid")
+        post=Complaints.get_by_id(int(postid))
+        post.key.delete()
+        print(self.request.get("postid"))
+        self.redirect("/myreport")
     
 app = webapp2.WSGIApplication([
-    ('/', Home),
+    ('/', Login),
     ('/reports', Reports),
     ('/myreport', userReport),
-    ('register', Registration)
+    ('/register', Registration)
 ], debug=True)

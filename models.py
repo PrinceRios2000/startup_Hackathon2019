@@ -3,7 +3,7 @@ from google.appengine.ext import ndb
 class Complaints(ndb.model):
     Type = ndb.StringProperty(required=True)
     Location = ndb.StringProperty(required=True)
-    Date = ndb.DateProperty(auto_now_add=True)
+    Date = ndb.StringProperty(required=True)
 
 class User(ndb.model):
     FirstName = ndb.StringProperty(required=True)
