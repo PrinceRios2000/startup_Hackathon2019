@@ -1,0 +1,21 @@
+body{
+    background-image: url("https://www.lifewire.com/thmb/nLPoHB6qyQYjufVv2F2oRcKk4Uo=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/LedePhoto-Photobypicjumbo.comfromPexels-5c2ab490c9e77c00016c4c85.jpg");
+    background-size: contain;
+    background-position: center;
+    background-size: cover;
+}
+
+#title {
+    text-align: center;
+    font-family: Impact;
+    font-size: 25px;
+    color: #ff6666;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+
+
