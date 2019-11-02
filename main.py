@@ -50,7 +50,31 @@ class Reports(webapp2.RequestHandler):
         self.response.write("<a href='/'>Home</a> | ")
         self.response.write("<a href='/myreport'>My posts</a>")
         
-
+class userReport(webapp2.RequestHandler):
+    def get(self):
+        checkLoggedInAndRegistered(self)
+        profile = users.get_current_user()
+        email_address = profile.nickname()
+        
+        profile_posts = User.query().filter(User.owner == email_address).fetch()
+        the_variable_dict = {
+            "logout_url":  users.create_logout_url('/'),
+            "profile_posts": profile_posts,
+        }
+        
+        profile_posts_template = the_jinja_env.get_template('templates/createReport.html')
+        self.response.write(profile_posts_template.render(the_variable_dict))
+        
+    def post(self):
+        checkLoggedInAndRegistered(self)
+        
+        post = Complaints(
+        Type = self.request.get('Type1st'), 
+        Location=self.request.get('Locatinon2nd'),
+        Date = datetime.datetime.fromtimestamp(time.mktime(utc_time.timetuple()))
+        )
+        post_key = post.put()
+        self.redirect("/myreport")
 
     
 app = webapp2.WSGIApplication([
