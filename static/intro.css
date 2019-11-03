@@ -1,35 +1,35 @@
 body {
-    background-color: beige;
+    background-color: #F7E7CE;
 }
 .intropage {
-    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-family: Comic;
     font-size: 35px;
     text-align: center;
-    
+    background-image: url("https://www.salinascitycenter.com/wp-content/uploads/2016/10/salinas-california.jpg");
 }
 
 
 #title {
     height: 10em;
-    position: relative;
     font-size: 25px;
     font-family: Cursive;
     font-style: Italic;
     font-weight: Bold;
-    font-weight: 999;
+    font-weight: 900;
     margin: 0;
     position: absolute;
     top: 24%;
     left: 25%;
     margin-right: -50%;
-    transform: translate(-50%, -50%)
+    transform: translate
     display: flex;
-    justify-content: column;
+    justify-content: space-between;
+    border-style: inset;
 }
 
-.about {
-    text-align: center;
-    font-family: "Comic Sans MS", cursive, sans-serif;
-    font-weight: bold;
-    font-size: 35px;
+
+a {
+    font-weight: Bold;
+    font-family: Impact;
+    font-size: 27px;
 }
