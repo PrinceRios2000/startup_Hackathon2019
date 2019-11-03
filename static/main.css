@@ -1,8 +1,8 @@
 header{
     color:white;
-    font-size: 30px;
+    font-size: 100px;
     font-family: "Comic Sans MS", cursive, sans-serif;
-    background-image: url("../Salinas.jpg");
+    background-image: url("https://www.cityofsalinas.org/sites/default/files/styles/brg_browser_width/public/departments_files/city_clerk_files/street-corner.jpg?itok=smTMxZ_9");
     font-style: italic;
     text-align: center;
     display: flex;
