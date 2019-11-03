@@ -4,21 +4,21 @@
     <link rel="stylesheet" href="../static/userpost.css">
     
     </head>
+    
+    <div class = "heading">  <center> 
+    Page for YOUR posts ! </center>
+    <br> </div>
     <div class = "b">
         <a href="../templates/intro.html">Log out</a>
         <a href="../templates/main.html">Home</a><br>
     </div>
     
     <div class = "filebutton"> 
-    <form method="POST" action="/myposts">
+      <form method="POST" action="/myposts">
                         <input type="hidden" name="postid" value="{{post.key.id()}}"/>
                         <input type="submit" name="Create" value="File a complaint"/>
-                    </form>
-            </div>
-    
-    <div class = "heading">  <center> 
-    This is the page where all your posts are showed! You can also delete or create a new one here. </center> <br> </div>
-    
+      </form>
+    </div>
     
     
     
