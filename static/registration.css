@@ -1,8 +1,5 @@
 body{
-    background-image: url("https://www.lifewire.com/thmb/nLPoHB6qyQYjufVv2F2oRcKk4Uo=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/LedePhoto-Photobypicjumbo.comfromPexels-5c2ab490c9e77c00016c4c85.jpg");
-    background-size: contain;
-    background-position: center;
-    background-size: cover;
+    background-color: beige;
     text-align: Center;
     font-family: Impact;
     font-size: 50px;
@@ -15,10 +12,12 @@ body{
     font-size: 25px;
     color: #b34d4d;
     position: absolute;
-    top: 52%;
-    left: 50%;
+    top: 25%;
+    left: 30%;
     margin-right: -50%;
     transform: translate(-50%, -50%)
+    display: flex;
+    justify-content: column;
 }
 
 #account {
