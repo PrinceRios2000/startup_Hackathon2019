@@ -27,12 +27,13 @@ class Reports(webapp2.RequestHandler):
     def get(self):
         checkLoggedInAndRegistered(self)
         
-        complaintPosts = Complaints.query()
-        
+        complaintPosts = Complaints.query().fetch()
+
         postLogoutLogic = {
             "logoutUrl": users.create_logout_url('/'),
             "complaints": complaintPosts
         }
+        
         
         home_template = the_jinja_env.get_template('templates/main.html')
         self.response.write(home_template.render(postLogoutLogic))
@@ -46,6 +47,7 @@ class Reports(webapp2.RequestHandler):
             Type = self.request.get('Type1st'),
             Location = self.request.get('Location2nd'),
             Date = self.request.get('Date3rd'),
+            owner = profile.nickname()
             )
         post_key = post.put()
         self.response.write("Reports created: " + str(post_key) + "<br>")
@@ -58,23 +60,28 @@ class userReport(webapp2.RequestHandler):
         profile = users.get_current_user()
         email_address = profile.nickname()
         
-        profile_posts = User.query().filter(User.Email == email_address).fetch()
+        profile_posts = Complaints.query().filter(Complaints.owner == email_address).fetch()
+        print("#$%^&*()(*&^%$#%^&*()&^%$#%^&*(&^%$^&*(")
+        print(len(profile_posts))
         the_variable_dict = {
             "logout_url":  users.create_logout_url('/'),
-            "profile_posts": profile_posts,
+            "profile_posts": profile_posts
         }
         
-        profile_posts_template = the_jinja_env.get_template('templates/filecomplaint.html')
+        profile_posts_template = the_jinja_env.get_template('templates/userpost.html')
         self.response.write(profile_posts_template.render(the_variable_dict))
 
         
     def post(self):
         checkLoggedInAndRegistered(self)
         
+        profile = users.get_current_user()
+        
         post = Complaints(
         Type = self.request.get('Type1st'), 
         Location=self.request.get('Location2nd'),
         Date = self.request.get('Date3rd'),
+        owner=profile.nickname()
         )
         post_key = post.put()
         self.redirect("/myreport")
@@ -129,5 +136,6 @@ app = webapp2.WSGIApplication([
     ('/', Login),
     ('/reports', Reports),
     ('/myreport', userReport),
-    ('/register', Registration)
+    ('/register', Registration),
+    ('/deletepost', DeletepostHandler)
 ], debug=True)

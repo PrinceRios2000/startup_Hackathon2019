@@ -79,3 +79,9 @@ body h1{
 form{
     float:right;
 }
+
+.fields{
+   background-color: grey;
+    font-family: 'Libre Caslon Text', serif;
+    margin: 2vh;
+}

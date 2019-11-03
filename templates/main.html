@@ -11,28 +11,24 @@
     <h1>Join your community in reporting any issues that you may encounter! </h1>
     </center>
       <div>
-         <form method="POST" action="/myreport">
-                     <input type="submit" name = "Create" value="File a complaint"/>
-         </form>
         <br>
         </br>
-       <b> <a href="/">  Log out</a>
-       <a href="/myreport">My Complaints| </a></b>
+       <b> <a href="/"> Log out </a>
+       <b> <a href="/myreport"> My Reports </a></b>
        </div>
+       
   
       <div class="Complaints">
        <br>
-   
        <h2>Complaints</h2>
-   
        <div class="eric">
-       {% for post in complaintPosts %}
+       {% for post in complaints %}
    
         <div class="post-div" >
         <span>
-         <h2 id="Type">Type: {{post["Type1st"]}}</h2>
-         <h2 id="Location">Location: {{post["Location2nd"]}}</h2>
-         <h2 id="Date">Date: {{post["Date3rd"]}}</h2>
+         <h2 id="Type">Type: {{post["Type"]}}</h2>
+         <h2 id="Location">Location: {{post["Location"]}}</h2>
+         <h2 id="Date">Date: {{post["Date"]}}</h2>
         </span>
         </div>
         <br> <br>

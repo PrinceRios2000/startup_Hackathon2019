@@ -4,44 +4,51 @@
     <link rel="stylesheet" href="../static/userpost.css">
     
     </head>
+    <body>
     <div class = "b">
-        <a href="../templates/intro.html">Log out</a>
-        <a href="../templates/main.html">Home</a><br>
+        <a href="{{logout_url}}">Log out</a>
+        <a href="/reports">Home</a><br>
     </div>
-    
-    <div class = "filebutton"> 
-    <form method="POST" action="/myposts">
-                        <input type="hidden" name="postid" value="{{post.key.id()}}"/>
-                        <input type="submit" name="Create" value="File a complaint"/>
-                    </form>
-            </div>
     
     <div class = "heading">  <center> 
     This is the page where all your posts are showed! You can also delete or create a new one here. </center> <br> </div>
     
+    <div class="fields">
+        <form method="POST" action="/myreport">
+            Date: <br>
+            <input style="width:50%" type="text" name="Date3rd" value="">
+            <br>
+            Location: <br>
+            <textarea name="Location2nd"></textarea>
+            <br>
+            Type of problem: <br>
+            <input type="radio" name="Type1st" value="Pothole" checked> Pothole<br>
+            <input type="radio" name="Type1st" value="Tree"> Tree<br>
+            <input type="radio" name="Type1st" value="Sidewalks"> Sidewalks
+            <br><br>
+            <input type="submit" value="Create Post">
+            <br><br>
+        </form>
+    </div>
     
     
-    
-    
-    
-<div class="profdiv">
-    <br>
-                {% for post in complaintPosts %}
-                <div class="post-div">
-                    <h2>Type of problem: {{post["Type1st"]}}</h2>
-                    <h2>Location of the problem: {{post["Location2nd"]}}</h2>
-                    <h2>Date: {{post["Date3rd"]}}</h2>
-                    <form method="POST" action="/deletepost">
-                        <input type="hidden" name="postid" value="{{post.key.id()}}"/>
-                        <input type="submit" name="Delete" value="Delete"/>
-                    </form>
-                </div>
-                <br><br>
-            {% endfor %}
+    <div class="profdiv">
+        <br>
+        {% for post in profile_posts %}
+            <div class="post-div">
+                <h2>Type of problem: {{post["Type"]}}</h2>
+                <h2>Location of the problem: {{post["Location"]}}</h2>
+                <h2>Date: {{post["Date"]}}</h2>
+                <form method="POST" action="/deletepost">
+                    <input type="hidden" name="postid" value="{{post.key.id()}}"/>
+                    <input type="submit" name="Delete" value="Delete"/>
+                </form>
             </div>
+            <br><br>
+        {% endfor %}
+    </div>
 
-            <div class="image">
-  <img src= ../StartupHackathon.png>
-    
+    <div class="image">
+    <img src= ../StartupHackathon.png>
     </body>
 </html>
