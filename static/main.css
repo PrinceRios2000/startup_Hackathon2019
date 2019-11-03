@@ -1,7 +1,6 @@
 header{
     color:white;
     font-size: 30px;
-    font-weight: normal;
     font-family: "Comic Sans MS", cursive, sans-serif;
     background-image: url("../Salinas.jpg");
     font-style: italic;
@@ -9,7 +8,7 @@ header{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 200px;
+    height: 30vh;
     background-position: center;
     background-size: cover;
     font-weight: bold;
@@ -21,11 +20,10 @@ body{
 }
 
 img{
-    height: 50px;
-    width: 50px;
+    height: 9vh;
+    width: 9vh;
     text-align: right;
     position: absolute;
-    bottom: 8px;
     right: 16px;
     font-size: 18px;
     display: flex;
@@ -33,8 +31,8 @@ img{
 }
 
 .post-div{
-    grid-template-columns: 10px 10px auto;
-    font-size: 15px;
+    grid-template-columns: 1vh 1vh auto;
+    font-size: 5vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -52,20 +50,22 @@ img{
 }
 
 #Type{
-    font-size: 30px;
+    font-size: 7vh;
 }
 #Location{
-    font-size: 20px;
+    font-size: 5vh;
 }
 
 #Date{
-    font-size: 20px;
+    font-size: 5vh;
 }
 
-b a{
+.b a{
     float: right;
-    text-decoration: none;
+    margin: 1vh;
+    font-weight: bold;
     color: black;
+    text-decoration: none;
     font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
