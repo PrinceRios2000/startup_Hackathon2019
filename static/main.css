@@ -2,7 +2,7 @@ header{
     color:white;
     font-size: 30px;
     font-weight: normal;
-    font-family: "Verdana", Verdana, sans-serif;
+    font-family: "Comic Sans MS", cursive, sans-serif;
     background-image: url("../Salinas.jpg");
     font-style: italic;
     text-align: center;
@@ -10,13 +10,13 @@ header{
     flex-direction: column;
     justify-content: center;
     height: 100px;
-    background-size: contain;
     background-position: center;
     background-size: cover;
 }
 
 body{
     background-color: #F7E7CE;
+    
 }
 
 img{
@@ -27,6 +27,8 @@ img{
     bottom: 8px;
     right: 16px;
     font-size: 18px;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .post-div{
@@ -34,12 +36,16 @@ img{
     font-size: 15px;
     display: flex;
     flex-direction: column;
-    justify-content: left;
+    justify-content: flex-end;
+    border-style: solid;
+    border-color: black;
     
 }
 
 .Complaints h2{
     text-decoration: none;
+    text-shadow: lightblue 2px 2px;
+    font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
 #Type{
@@ -56,6 +62,18 @@ img{
 #Date{
     font-size: 20px;
 }
+
 b a{
     float: right;
+    text-decoration: none;
+    color: black;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+body h1{
+    color: black;
+    text-shadow: lightgreen 2px 2px;
+    font-family: "Verdana", Verdana, sans-serif;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    
 }

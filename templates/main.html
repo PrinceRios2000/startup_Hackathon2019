@@ -4,16 +4,17 @@
     <link style = text/css rel="stylesheet" href="../static/main.css">
     </head>
     <header>
-         Citzens Report
+         Citizens Report
     </header>
     <body> 
-    <h1>Look at our feed and see what other citizens are complaining about !</h1>
+    <h1>Join your community in reporting any issues that you may encounter! </h1>
     
       <div>
-       <a href="/profileposts">
-        <input type = "hidden" name ="postid" value = "{{post.key.id}}"/>
-       <input type="submit" name = "Create" value="File a complaint"/>
-       <b> <a href="{{logout_url}}">Log out</a></b>
+       
+        <input type="submit" name = "Create" value="File a complaint"/>
+
+       <b> <a href="{{logout_url}}">Log out</a>
+       <a href="../templates/userpost.html">My Complaints</a></b>
        </div>
   
       <div class="Complaints">
@@ -26,13 +27,13 @@
    
         <div class="post-div" >
         <span>
-         <h2 id="Type">Type: {{post["type"]}}</h2>
-         <h2 id="Location">Location: {{post["location"]}}</h2>
-         <h2 id="Date">Date: {{post["date"]}}</h2>
+         <h2 id="Type">Type: {{post["Type1st"]}}</h2>
+         <h2 id="Location">Location: {{post["Location2nd"]}}</h2>
+         <h2 id="Date">Date: {{post["Date3rd"]}}</h2>
         </span>
         </div>
-      <br> <br>
-    {% endfor %}
+        <br> <br>
+       {% endfor %}
   </div>
   </div>
   
