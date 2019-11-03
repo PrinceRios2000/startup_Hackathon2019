@@ -1,33 +1,51 @@
 body{
-    background-color: beige;
+    background-color: #f5f5f5;
     text-align: center;
     font-family: Impact;
     font-size: 50px;
     top: 30%;
+    font-family: 'Open Sans', sans-serif;
 }
 
 #title {
     text-align: center;
     font-family: Impact;
     font-size: 25px;
-    color: #b34d4d;
+    color: #224c5b;
     position: absolute;
     top: 25%;
     left: 30%;
-    margin-right: -50%;
     transform: translate(-50%, -50%)
     display: flex;
+    font-family: 'Open Sans', sans-serif;
     justify-content: column;
 }
 
-#account {
-    color: #b34d4d;
-    position: absolute;
-    top: 25%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%)
+
+
+#titles{
+    background-color: #454545;
+    color: #f5f5f5;
+    font-family: 'Open Sans', sans-serif;
+    width: 100%;
+     border-style: solid;
+    border-color: black;
+    border-width: 5px;
+    
 }
 
 
-
+.Banner{
+    color: white;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    font-size: 40px;
+    background-image: url(https://thescienceattic.files.wordpress.com/2010/06/dream-forest.jpg);
+    background-position: center;
+    background-size: cover;
+    font-weight: bold;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    font-family: 'Open Sans', sans-serif;
+}
