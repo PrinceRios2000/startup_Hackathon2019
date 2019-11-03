@@ -9,7 +9,7 @@ header{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100px;
+    height: 200px;
     background-position: center;
     background-size: cover;
 }
@@ -46,13 +46,11 @@ img{
     text-decoration: none;
     text-shadow: lightblue 2px 2px;
     font-family: "Comic Sans MS", cursive, sans-serif;
+    display: flex;
+    justify-content: center;
 }
 
 #Type{
-    height: 50px;
-    width: 50px;
-    bottom: 8px;
-    right: 16px;
     font-size: 30px;
 }
 #Location{
@@ -72,8 +70,12 @@ b a{
 
 body h1{
     color: black;
-    text-shadow: lightgreen 2px 2px;
+    text-shadow: white 4px 4px;
     font-family: "Verdana", Verdana, sans-serif;
     font-family: "Comic Sans MS", cursive, sans-serif;
     
+}
+
+form{
+    float:right;
 }
