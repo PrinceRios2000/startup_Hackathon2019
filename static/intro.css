@@ -1,10 +1,11 @@
 body {
-    background-image: url("https://www.salinascitycenter.com/wp-content/uploads/2016/10/salinas-california.jpg");
+    background-color: beige;
 }
 .intropage {
-    font-family: Impact;
+    font-family: "Comic Sans MS", cursive, sans-serif;
     font-size: 35px;
     text-align: center;
+    
 }
 
 
@@ -18,14 +19,17 @@ body {
     font-weight: 999;
     margin: 0;
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 24%;
+    left: 25%;
     margin-right: -50%;
     transform: translate(-50%, -50%)
+    display: flex;
+    justify-content: column;
 }
 
 .about {
     text-align: center;
-    font-family: Impact;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-weight: bold;
     font-size: 35px;
 }

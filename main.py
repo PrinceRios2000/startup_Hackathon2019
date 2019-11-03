@@ -18,7 +18,7 @@ def checkLoggedInAndRegistered(request):
         request.redirect("/")
         return
     emailAddress = profile.nickname()
-    registeredProfile = User.query().filter(User.email == emailAddress).get()
+    registeredProfile = User.query().filter(User.Email == emailAddress).get()
     if not registeredProfile:
         request.redirect("/register")
         return
@@ -42,10 +42,10 @@ class Reports(webapp2.RequestHandler):
         
         profile = users.get_current_user()
         
-        post=Complaints(
+        post = Complaints(
             Type = self.request.get('Type1st'),
             Location = self.request.get('Location2nd'),
-            Date = self.request.get('Date3rd')
+            Date = self.request.get('Date3rd'),
             )
         post_key = post.put()
         self.response.write("Reports created: " + str(post_key) + "<br>")
@@ -58,7 +58,7 @@ class userReport(webapp2.RequestHandler):
         profile = users.get_current_user()
         email_address = profile.nickname()
         
-        profile_posts = User.query().filter(User.owner == email_address).fetch()
+        profile_posts = User.query().filter(User.Email == email_address).fetch()
         the_variable_dict = {
             "logout_url":  users.create_logout_url('/'),
             "profile_posts": profile_posts,
@@ -73,7 +73,7 @@ class userReport(webapp2.RequestHandler):
         post = Complaints(
         Type = self.request.get('Type1st'), 
         Location=self.request.get('Location2nd'),
-        Date = self.request.get('Date3rd')
+        Date = self.request.get('Date3rd'),
         )
         post_key = post.put()
         self.redirect("/myreport")
@@ -83,7 +83,7 @@ class Login(webapp2.RequestHandler):
         login_template = the_jinja_env.get_template('templates/intro.html')
         
         the_variable_dict = {
-            "login_url":  users.create_login_url('/')
+            "login_url":  users.create_login_url('/reports')
         }
         self.response.write(login_template.render(the_variable_dict))
         
