@@ -47,7 +47,8 @@ class Reports(webapp2.RequestHandler):
             Type = self.request.get('Type1st'),
             Location = self.request.get('Location2nd'),
             Date = self.request.get('Date3rd'),
-            owner = profile.nickname()
+            owner = profile.nickname(),
+            Special = self.request.get('sUser')
             )
         post_key = post.put()
         self.response.write("Reports created: " + str(post_key) + "<br>")
@@ -110,9 +111,10 @@ class Registration(webapp2.RequestHandler):
         citizen_acc = User(
             FirstName=self.request.get('first_name'), 
             LastName =self.request.get('last_name'),
-            PhoneNumber =self.request.get('last_name'),
-            Location = self.request.get('last_name'),
-            Email=profile.nickname()
+            PhoneNumber =self.request.get('pNumber'),
+            Location = self.request.get('state'),
+            Email=profile.nickname(),
+            Special= self.request.get('sUser')
         )
         
         citizen_acc.put()

@@ -12,3 +12,4 @@ class User(ndb.Model):
     Email = ndb.StringProperty(required=True)
     PhoneNumber = ndb.StringProperty(required=True)
     Location = ndb.StringProperty(required=True)
+    Special = ndb.StringProperty(required=False)
