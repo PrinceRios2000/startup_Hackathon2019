@@ -5,6 +5,10 @@
     
     </head>
     <body>
+
+    <div class = "heading">  <center> 
+    Page for YOUR posts ! </center>
+    <br> </div>
     <div class = "b">
         <a href="{{logout_url}}">Log out</a>
         <a href="/reports">Home</a><br>
@@ -29,6 +33,11 @@
             <input type="submit" value="Create Post">
             <br><br>
         </form>
+    <div class = "filebutton"> 
+      <form method="POST" action="/myreport">
+                        <input type="hidden" name="postid" value="{{post.key.id()}}"/>
+                        <input type="submit" name="Create" value="File a complaint"/>
+      </form>
     </div>
     
     

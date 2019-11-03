@@ -27,12 +27,20 @@ p1    {color: green;}
     display: flex;
 }
 .heading {
-    font-size: larger;
-    font-weight: bolder;
-    background-color: black;
+    color:white;
+    font-size: 30px;
+    font-weight: normal;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    background-image: url("../Salinas.jpg");
+    font-style: italic;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    padding-top: 5px;
-    color: white;
+    height: 200px;
+    background-position: center;
+    background-size: cover;
+    font-weight: bold;
 }
 
 
@@ -46,9 +54,9 @@ p1    {color: green;}
 .post-div{
     border-width:1fr 1fr 1fr 1fr;
     padding-left:1fr;
-    background-color: grey;
     position: relative;
-    float: left;
+    border-style: solid;
+    
 }
 img{
     height: 50px;
