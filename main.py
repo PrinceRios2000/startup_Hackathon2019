@@ -66,6 +66,7 @@ class userReport(webapp2.RequestHandler):
         
         profile_posts_template = the_jinja_env.get_template('templates/filecomplaint.html')
         self.response.write(profile_posts_template.render(the_variable_dict))
+        self.redirect("")
         
     def post(self):
         checkLoggedInAndRegistered(self)
@@ -128,5 +129,6 @@ app = webapp2.WSGIApplication([
     ('/', Login),
     ('/reports', Reports),
     ('/myreport', userReport),
+    ('/myposts', userReport),
     ('/register', Registration)
 ], debug=True)

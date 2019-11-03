@@ -10,11 +10,12 @@
     <h1>Join your community in reporting any issues that you may encounter! </h1>
     
       <div>
-       
-        <input type="submit" name = "Create" value="File a complaint"/>
+         <form method="POST" action="/myreport">
+                     <input type="submit" name = "Create" value="File a complaint"/>
+         </form>
 
-       <b> <a href="{{logout_url}}">Log out</a>
-       <a href="../templates/userpost.html">My Complaints</a></b>
+       <b> <a href="/">Log out</a>
+       <a href="/myreport">My Complaints</a></b>
        </div>
   
       <div class="Complaints">

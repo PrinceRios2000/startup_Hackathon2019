@@ -5,12 +5,12 @@
     
     </head>
     <div class = "b">
-        logout &nbsp;&nbsp;&nbsp;
-        home <br>
+        <a href="../templates/intro.html">Log out</a>
+        <a href="../templates/main.html">Home</a><br>
     </div>
     
     <div class = "filebutton"> 
-    <form method="POST" action="/myreport">
+    <form method="POST" action="/myposts">
                         <input type="hidden" name="postid" value="{{post.key.id()}}"/>
                         <input type="submit" name="Create" value="File a complaint"/>
                     </form>

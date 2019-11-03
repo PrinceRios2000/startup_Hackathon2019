@@ -13,11 +13,12 @@ p1    {color: green;}
     flex-direction: column;
     flex-wrap: wrap;
 }
-.b {
+.b{
     float: right;
     margin: 20px;
     font-weight: bolder;
-    color: white;
+    color: red;
+    text-decoration: none
 }
 .filebutton {
     float: right;
