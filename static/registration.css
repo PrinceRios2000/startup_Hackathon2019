@@ -3,15 +3,28 @@ body{
     background-size: contain;
     background-position: center;
     background-size: cover;
+    text-align: Center;
+    font-family: Impact;
+    font-size: 50px;
+    top: 30%;
 }
 
 #title {
     text-align: center;
     font-family: Impact;
     font-size: 25px;
-    color: #ff6666;
+    color: #b34d4d;
     position: absolute;
-    top: 50%;
+    top: 52%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+#account {
+    color: #b34d4d;
+    position: absolute;
+    top: 25%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%)
