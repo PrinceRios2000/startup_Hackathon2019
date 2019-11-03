@@ -54,6 +54,7 @@ class Reports(webapp2.RequestHandler):
         self.response.write("<a href='/'>Home</a> | ")
         self.response.write("<a href='/myreport'>My posts</a>")
         
+        
 class userReport(webapp2.RequestHandler):
     def get(self):
         checkLoggedInAndRegistered(self)
