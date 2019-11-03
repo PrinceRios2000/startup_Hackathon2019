@@ -61,8 +61,6 @@ class userReport(webapp2.RequestHandler):
         email_address = profile.nickname()
         
         profile_posts = Complaints.query().filter(Complaints.owner == email_address).fetch()
-        print("#$%^&*()(*&^%$#%^&*()&^%$#%^&*(&^%$^&*(")
-        print(len(profile_posts))
         the_variable_dict = {
             "logout_url":  users.create_logout_url('/'),
             "profile_posts": profile_posts
@@ -70,7 +68,6 @@ class userReport(webapp2.RequestHandler):
         
         profile_posts_template = the_jinja_env.get_template('templates/userpost.html')
         self.response.write(profile_posts_template.render(the_variable_dict))
-
         
     def post(self):
         checkLoggedInAndRegistered(self)
@@ -119,7 +116,8 @@ class Registration(webapp2.RequestHandler):
         
         citizen_acc.put()
         
-        self.redirect('/')
+        self.redirect('/reports')
+        
 class DeletepostHandler(webapp2.RequestHandler):
     def get(self):
         client = users.get_current_user()
@@ -129,6 +127,7 @@ class DeletepostHandler(webapp2.RequestHandler):
         postid= self.request.get("postid")
         post=Complaints.get_by_id(int(postid))
         post.key.delete()
+        print("%&^*^%$&*(&^%$&*(&^%$#$&*(*^%$$#$^&*()&^%*$#&^*()^%$#$^^&*(*^&%$%#$^%&^*")
         print(self.request.get("postid"))
         self.redirect("/myreport")
     
