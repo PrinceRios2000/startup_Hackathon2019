@@ -2,12 +2,14 @@
 <html>
     <head> 
     <link rel="stylesheet" href="../static/userpost.css">
-    
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     </head>
+    <title>
+        My Profile
+    </title>
     <body>
-
-    <div class = "heading">  <center> 
-    Page for YOUR posts ! </center>
+    <div class = "heading"> 
+    <center> Page for YOUR posts ! </center>
     <br> </div>
     <div class = "b">
         <a href="{{logout_url}}">Log out</a>
@@ -15,7 +17,9 @@
         <a href="/reports">Home</a><br>
     </div>
     
-    <div class="fields">
+    
+    <section>
+        <div class="fields">
         <form method="POST" action="/myreport">
             Date: <br>
             <input style="width:50%" type="text" name="Date3rd" value="">
@@ -31,7 +35,7 @@
             <input type="submit" value="Create Post">
             <br><br>
         </form>
-    
+    </div>
     <div class="profdiv">
         <br>
         {% for post in profile_posts %}
@@ -47,8 +51,7 @@
             <br><br>
         {% endfor %}
     </div>
-    <div class="image">
+    </section>
     <img src= https://s3.amazonaws.com/csumb-uploads/L18vT44tR8yIhtoiOhMQ_hackathon_logo-no-text.png>
-    </div>
     </body>
 </html>
